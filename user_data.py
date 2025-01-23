@@ -4,8 +4,10 @@ import time
 import requests
 import pandas as pd
 
+import contest_data as cd
 
-ABC = pd.read_csv('ABC.csv', index_col=0)
+
+ABC = cd.create_dataframe(cd.get_contest_data())
 ABC = ABC.rename(columns={'id': 'contest_id'})
 
 
