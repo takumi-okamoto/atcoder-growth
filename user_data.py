@@ -9,6 +9,7 @@ import contest_data as cd
 
 ABC = cd.create_dataframe(cd.get_contest_data())
 ABC = ABC.rename(columns={'id': 'contest_id'})
+ABC = ABC[ABC.contest_id.str.startswith('abc')]
 
 
 def get_user_data(user_name: str, start_epoch_time: int) -> list[dict]:
